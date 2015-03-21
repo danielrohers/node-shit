@@ -1,0 +1,10 @@
+{
+  "name": "code-shit",
+  "version": "1.0.0",
+  "description": "Example node shit",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Daniel Rohers Moura"
+}
