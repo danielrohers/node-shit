@@ -10,8 +10,8 @@ var _readPage = function (file, cb) {
     });
 }
 
-var _writePage = function (res, data) {
-    res.writeHeader(200, {'Content-Type': 'text/html'});
+var _writePage = function (res, data, statusCode) {
+    res.writeHeader(statusCode || 200, {'Content-Type': 'text/html'});
     res.write(data);
     res.end();
 }
@@ -29,8 +29,8 @@ var server = http.createServer(function(req, res){
             });
             break;
         default:
-            _readPage('/error.html', function (data) {
-                _writePage(res, data);
+            _readPage('/404.html', function (data) {
+                _writePage(res, data, 404);
             });
             break;
     }
